@@ -14,8 +14,9 @@ header {
 }
 
 header {
-    color: #25272E;
+    color: #1f3d7a;
     text-align: center;
+    font-size: 27px;
     font-family: 'Lucida Grande', sans-serif;
 }
 
@@ -23,6 +24,11 @@ img {
     border-radius: 4px;
     padding: 5px;
     width: 100px;
+}
+
+p {
+    font-size: 27px;
+    margin: 30px;
 }
 
 .score-board {
