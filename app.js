@@ -21,29 +21,39 @@ function convertToWord(letter){
 }
 
 function win(userChoice, computerChoice){
+    const smallUserWord = "user".fontsize(3).sup();
+    const smallComputerWord = "computer".fontsize(3).sup();
+    const userChoice_div=document.getElementById(userChoice);
     userScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    const smallUserWord = "user".fontsize(3).sup();
-    const smallComputerWord = "computer".fontsize(3).sup();
     result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} beats ${convertToWord(computerChoice)}${smallComputerWord}. You win!`
+    userChoice_div.classList.add("green-glow");
+    setTimeout(function(){userChoice_div.classList.remove("green-glow")}, 300)
 }
 
 function lose(userChoice, computerChoice){
+    const smallUserWord = "user".fontsize(3).sup();
+    const smallComputerWord = "computer".fontsize(3).sup();
+    const userChoice_div=document.getElementById(userChoice);
     computerScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    const smallUserWord = "user".fontsize(3).sup();
-    const smallComputerWord = "computer".fontsize(3).sup();
     result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} loses to ${convertToWord(computerChoice)}${smallComputerWord}. You lose!`
+    userChoice_div.classList.add("red-glow");
+    setTimeout(function(){userChoice_div.classList.remove("red-glow")}, 300)
+
 }
 
 function draw(userChoice, computerChoice){
-    userScore_span.innerHTML = userScore;
-    computerScore_span.innerHTML = computerScore;
     const smallUserWord = "user".fontsize(3).sup();
     const smallComputerWord = "computer".fontsize(3).sup();
+    const userChoice_div=document.getElementById(userChoice);
+    userScore_span.innerHTML = userScore;
+    computerScore_span.innerHTML = computerScore;
     result_p.innerHTML = `It's a draw for ${convertToWord(userChoice)}${smallUserWord} and ${convertToWord(computerChoice)}${smallComputerWord}.`
+    userChoice_div.classList.add("grey-glow");
+    setTimeout(function(){userChoice_div.classList.remove("grey-glow")}, 300)
 }
 
 function game(userChoice){

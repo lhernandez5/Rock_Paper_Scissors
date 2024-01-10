@@ -56,7 +56,6 @@ p {
     position: absolute;
     top: 30px;
     left: -25px;
-
 }
 
 #computer-label {
@@ -92,7 +91,7 @@ p {
 
 .choice:hover {
     cursor: pointer;
-    background: #24272E;
+    background: #f2f2f2;
 }
 
 #action-message {
@@ -102,4 +101,19 @@ p {
     font-weight: bold;
     font-size: 20px;
     margin-top: 20px;
+}
+
+.green-glow{
+    border: 4px solid #47d147;
+    box-shadow: 0px 0px 10px #33ff33;
+}
+
+.red-glow{
+    border: 4px solid red;
+    box-shadow: 0px 0px 10px #ff9999;
+}
+
+.grey-glow{
+    border: 4px solid #1a1a1a;
+    box-shadow: 0px 0px 10px  #4d4d4d;
 }
