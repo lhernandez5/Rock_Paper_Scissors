@@ -27,7 +27,7 @@ function win(userChoice, computerChoice){
     userScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} beats ${convertToWord(computerChoice)}${smallComputerWord}. You win!`
+    result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} and ${convertToWord(computerChoice)}${smallComputerWord}. You win!🏅`
     userChoice_div.classList.add("green-glow");
     setTimeout(()=>userChoice_div.classList.remove("green-glow"), 300);
 }
@@ -39,7 +39,7 @@ function lose(userChoice, computerChoice){
     computerScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} loses to ${convertToWord(computerChoice)}${smallComputerWord}. You lose!`
+    result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} and ${convertToWord(computerChoice)}${smallComputerWord}. You lose!🙈`
     userChoice_div.classList.add("red-glow");
     setTimeout(()=>userChoice_div.classList.remove("red-glow"), 300);
 }
@@ -50,7 +50,7 @@ function draw(userChoice, computerChoice){
     const userChoice_div=document.getElementById(userChoice);
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    result_p.innerHTML = `It's a draw for ${convertToWord(userChoice)}${smallUserWord} and ${convertToWord(computerChoice)}${smallComputerWord}.`
+    result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} and ${convertToWord(computerChoice)}${smallComputerWord}. It's a draw.🖍`
     userChoice_div.classList.add("grey-glow");
     setTimeout(()=>userChoice_div.classList.remove("grey-glow"), 300);
 }
@@ -58,7 +58,7 @@ function draw(userChoice, computerChoice){
 function game(userChoice){
     const computerChoice = getComputerChoice();
     switch(userChoice + computerChoice){
-        case "p":
+        case "rs":
         case "pr":
         case "sp":
             win(userChoice, computerChoice);

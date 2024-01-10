@@ -88,15 +88,6 @@ img {
     background: #f2f2f2;
 }
 
-#action-message {
-    text-align: center;
-    color: white;
-    font-family: Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 20px;
-    margin-top: 20px;
-}
-
 .green-glow{
     border: 4px solid #47d147;
     box-shadow: 0px 0px 10px #33ff33;
@@ -110,4 +101,12 @@ img {
 .grey-glow{
     border: 4px solid #1a1a1a;
     box-shadow: 0px 0px 10px  #4d4d4d;
+}
+#action-message {
+    text-align: center;
+    color: white;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
 }
