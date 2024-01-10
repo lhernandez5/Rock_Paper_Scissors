@@ -7,10 +7,10 @@ const result = document.querySelector("#resultMessage");
 const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
+const userChoice_div=document.querySelector(".choice");
 
-function showResult(){
-    const userChoice_div=document.querySelector(".choice");
-    userChoice_div.addEventListener("click",() => result.style.display="block");     
+function showResult(userChoice){
+    userChoice.addEventListener("click",() => result.style.display="block");     
 }
 
 function getComputerChoice(){
@@ -32,7 +32,7 @@ function win(userChoice, computerChoice){
     userScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    result.innerHTML = `${convertToWord(userChoice)}${smallUserWord} and ${convertToWord(computerChoice)}${smallComputerWord}. You win!🏅`
+    result.innerHTML = `${convertToWord(userChoice)}${smallUserWord} and ${convertToWord(computerChoice)}${smallComputerWord}. You win! 🏅`
     userChoice_div.classList.add("green-glow");
     setTimeout(()=>userChoice_div.classList.remove("green-glow"), 300);
     
@@ -45,10 +45,9 @@ function lose(userChoice, computerChoice){
     computerScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    result.innerHTML = `${convertToWord(userChoice)}${smallUserWord} and ${convertToWord(computerChoice)}${smallComputerWord}. You lose!🙈`
+    result.innerHTML = `${convertToWord(userChoice)}${smallUserWord} and ${convertToWord(computerChoice)}${smallComputerWord}. You lose! 🙈`
     userChoice_div.classList.add("red-glow");
     setTimeout(()=>userChoice_div.classList.remove("red-glow"), 300);
-   
 }
 
 function draw(userChoice, computerChoice){
@@ -57,10 +56,9 @@ function draw(userChoice, computerChoice){
     const userChoice_div=document.getElementById(userChoice);
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    result.innerHTML = `${convertToWord(userChoice)}${smallUserWord} and ${convertToWord(computerChoice)}${smallComputerWord}. It's a draw.🖍`
+    result.innerHTML = `${convertToWord(userChoice)}${smallUserWord} and ${convertToWord(computerChoice)}${smallComputerWord}. It's a draw. 🖍`
     userChoice_div.classList.add("grey-glow");
     setTimeout(()=>userChoice_div.classList.remove("grey-glow"), 300);
-  
 }
 
 function game(userChoice){
@@ -88,7 +86,7 @@ function main(){
     rock_div.addEventListener("click", ()=> game("r"));
     paper_div.addEventListener("click", ()=> game("p"));
     scissors_div.addEventListener("click", ()=>game("s"));
-    showResult();
+    showResult(userChoice_div);
 }
 
 main();
