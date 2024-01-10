@@ -10,10 +10,7 @@ const scissors_div = document.getElementById("s");
 
 function showResult(){
     const userChoice_div=document.querySelector(".choice");
-    userChoice_div.addEventListener("click",() => {
-            result.style.display="block";   
-    })
-         
+    userChoice_div.addEventListener("click",() => result.style.display="block");     
 }
 
 function getComputerChoice(){
