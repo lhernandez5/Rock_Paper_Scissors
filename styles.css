@@ -13,7 +13,7 @@ header {
     padding: 20px;
 }
 
-header {
+#title {
     color: #1f3d7a;
     text-align: center;
     font-size: 27px;
@@ -26,9 +26,17 @@ img {
     width: 100px;
 }
 
-p {
+.result {
+    font-size: 30px;
+    color: white;
+}
+
+#resultMessage {
     font-size: 27px;
     margin: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-family: Helvetica, sans-serif;
 }
 
 .score-board {
@@ -62,17 +70,6 @@ p {
     position: absolute;
     top: 30px;
     right: -30px;
-}
-
-.result {
-    font-size: 30px;
-    color: white;
-}
-
-.result > p {
-    text-align: center;
-    font-weight: bold;
-    font-family: Helvetica, sans-serif;
 }
 
 .choices {
