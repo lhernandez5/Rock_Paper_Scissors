@@ -3,7 +3,7 @@ let computerScore = 0;
 const userScore_span = document.getElementById("user-score");
 const computerScore_span = document.getElementById("computer-score");
 const scoreBoard_div = document.querySelector(".score-board");
-const result_p = document.querySelector(".result > p");
+const result_p = document.querySelector("#resultMessage");
 const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
@@ -42,7 +42,6 @@ function lose(userChoice, computerChoice){
     result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} loses to ${convertToWord(computerChoice)}${smallComputerWord}. You lose!`
     userChoice_div.classList.add("red-glow");
     setTimeout(()=>userChoice_div.classList.remove("red-glow"), 300);
-
 }
 
 function draw(userChoice, computerChoice){
