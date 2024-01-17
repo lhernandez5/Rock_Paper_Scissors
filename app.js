@@ -9,8 +9,10 @@ const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
 const userChoice_div=document.querySelector(".choice");
 
-function showResult(userChoice){
-    userChoice.addEventListener("click",() => result.style.display="block");     
+function showResult(){
+    rock_div.addEventListener("click",() => result.style.display="block");
+    paper_div.addEventListener("click",() => result.style.display="block");
+    scissors_div.addEventListener("click",() => result.style.display="block");
 }
 
 function getComputerChoice(){
@@ -34,7 +36,7 @@ function win(userChoice, computerChoice){
     computerScore_span.innerHTML = computerScore;
     result.innerHTML = `${convertToWord(userChoice)}${smallUserWord} and ${convertToWord(computerChoice)}${smallComputerWord}. You win! 🏅`
     userChoice_div.classList.add("green-glow");
-    setTimeout(()=>userChoice_div.classList.remove("green-glow"), 300);
+    setTimeout(()=>userChoice_div.classList.remove("green-glow"), 200);
     
 }
 
@@ -47,7 +49,7 @@ function lose(userChoice, computerChoice){
     computerScore_span.innerHTML = computerScore;
     result.innerHTML = `${convertToWord(userChoice)}${smallUserWord} and ${convertToWord(computerChoice)}${smallComputerWord}. You lose! 🙈`
     userChoice_div.classList.add("red-glow");
-    setTimeout(()=>userChoice_div.classList.remove("red-glow"), 300);
+    setTimeout(()=>userChoice_div.classList.remove("red-glow"), 200);
 }
 
 function draw(userChoice, computerChoice){
@@ -58,17 +60,18 @@ function draw(userChoice, computerChoice){
     computerScore_span.innerHTML = computerScore;
     result.innerHTML = `${convertToWord(userChoice)}${smallUserWord} and ${convertToWord(computerChoice)}${smallComputerWord}. It's a draw. 🖍`
     userChoice_div.classList.add("grey-glow");
-    setTimeout(()=>userChoice_div.classList.remove("grey-glow"), 300);
+    setTimeout(()=>userChoice_div.classList.remove("grey-glow"), 200);
 }
 
 function game(userChoice){
     const computerChoice = getComputerChoice();
+    console.log("userchoice "+userChoice+" comp choice: "+computerChoice);
     switch(userChoice + computerChoice){
         case "rs":
         case "pr":
         case "sp":
             win(userChoice, computerChoice);
-            break;
+;            break;
         case "rp":
         case "ps":
         case "sr":
@@ -85,8 +88,8 @@ function game(userChoice){
 function main(){
     rock_div.addEventListener("click", ()=> game("r"));
     paper_div.addEventListener("click", ()=> game("p"));
-    scissors_div.addEventListener("click", ()=>game("s"));
-    showResult(userChoice_div);
+    scissors_div.addEventListener("click", ()=> game("s"));
+    showResult();
 }
 
 main();
