@@ -13,7 +13,7 @@ body {
     padding: 20px;
     color: #1f3d7a;
     text-align: center;
-    font-size: 40px;
+    font-size: 45px;
     font-family: 'Lucida Grande', sans-serif;
 }
 
@@ -108,6 +108,7 @@ img {
     color: white;
     font-family: Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 25px;
     margin-top: 20px;
+    padding: 20px;
 }
